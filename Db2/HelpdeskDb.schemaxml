@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8mb3" collation="utf8mb3_spanish_ci">helpdesk</database>
+</source>
+<canvas zoom="75">
+<tables>
+<table name="ReparacionSoftware" view="standard">
+<left>594</left>
+<top>364</top>
+<width>201</width>
+<height>189</height>
+<sql_create_table>CREATE TABLE `reparacionsoftware` (
+  `Id_rep_soft` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_empleado` int(11) NOT NULL,
+  `Id_cliente` int(11) NOT NULL,
+  `fecha_ingreso` datetime NOT NULL,
+  `descripcion_problema` varchar(200) NOT NULL,
+  `marca` varchar(15) NOT NULL,
+  `modelo` varchar(15) NOT NULL,
+  `falla` varchar(30) NOT NULL,
+  `origen` varchar(200) NOT NULL,
+  `Id_foto_reparacion` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Id_rep_soft`),
+  KEY `Id_cliente` (`Id_cliente`),
+  CONSTRAINT `reparacionsoftware_ibfk_1` FOREIGN KEY (`Id_cliente`) REFERENCES `ingresoequipo` (`Id_cliente`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_slovenian_ci</sql_create_table>
+</table>
+<table name="ReparacionHardware" view="standard">
+<left>594</left>
+<top>158</top>
+<width>201</width>
+<height>197</height>
+<sql_create_table>CREATE TABLE `reparacionhardware` (
+  `Id_rep_hard` int(11) NOT NULL,
+  `Id_empleado` int(11) DEFAULT NULL,
+  `Id_cliente` int(11) DEFAULT NULL,
+  `fecha_ingreso` datetime DEFAULT NULL,
+  `descripcion_problema` varchar(200) DEFAULT NULL,
+  `marca` varchar(20) DEFAULT NULL,
+  `modelo` varchar(20) DEFAULT NULL,
+  `falla` varchar(50) DEFAULT NULL,
+  `origen` varchar(50) DEFAULT NULL,
+  `Id_foto_reparacion` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Id_rep_hard`),
+  UNIQUE KEY `Id_rep_hard` (`Id_rep_hard`),
+  KEY `Id_cliente` (`Id_cliente`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci</sql_create_table>
+</table>
+<table name="IngresoEquipo" view="standard">
+<left>918</left>
+<top>278</top>
+<width>183</width>
+<height>164</height>
+<sql_create_table>CREATE TABLE `ingresoequipo` (
+  `Id_Equipo` int(11) NOT NULL AUTO_INCREMENT,
+  `id_factura_repare` int(11) DEFAULT NULL,
+  `id_reparado` int(11) DEFAULT NULL,
+  `Id_empleado` int(11) NOT NULL,
+  `Id_cliente` int(11) NOT NULL,
+  `marca` varchar(15) NOT NULL,
+  `modelo` varchar(15) NOT NULL,
+  `serie` varchar(15) NOT NULL,
+  PRIMARY KEY (`Id_Equipo`),
+  KEY `Id_empleado` (`Id_empleado`),
+  KEY `Id_cliente` (`Id_cliente`),
+  KEY `factura_cliente_id` (`id_factura_repare`),
+  KEY `reparados_id` (`id_reparado`),
+  CONSTRAINT `ingresoequipo_ibfk_1` FOREIGN KEY (`Id_cliente`) REFERENCES `reparacionhardware` (`Id_cliente`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish_ci</sql_create_table>
+</table>
+<table name="FacturaReparacion" view="standard">
+<left>5</left>
+<top>177</top>
+<width>169</width>
+<height>149</height>
+<sql_create_table>CREATE TABLE `facturareparacion` (
+  `Id_reparacion` int(11) DEFAULT NULL,
+  `Id_factura_repare` int(11) NOT NULL AUTO_INCREMENT,
+  `monto_total` float DEFAULT NULL,
+  `fecha_factura` datetime DEFAULT NULL,
+  PRIMARY KEY (`Id_factura_repare`),
+  KEY `Id_reparacion` (`Id_reparacion`),
+  CONSTRAINT `facturareparacion_ibfk_1` FOREIGN KEY (`Id_reparacion`) REFERENCES `reparados` (`Id_reparado`),
+  CONSTRAINT `facturareparacion_ibfk_2` FOREIGN KEY (`Id_reparacion`) REFERENCES `reparacion` (`Id_reparado`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci</sql_create_table>
+</table>
+<table name="Reparacion" view="standard">
+<left>254</left>
+<top>151</top>
+<width>140</width>
+<height>125</height>
+<sql_create_table>CREATE TABLE `reparacion` (
+  `Id_reparado` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_rep_hard` int(11) DEFAULT NULL,
+  `Id_rep_soft` int(11) DEFAULT NULL,
+  `ruta_archivo` text DEFAULT NULL,
+  PRIMARY KEY (`Id_reparado`),
+  KEY `Id_rep_hard` (`Id_rep_hard`),
+  KEY `Id_rep_soft` (`Id_rep_soft`),
+  CONSTRAINT `reparacion_ibfk_1` FOREIGN KEY (`Id_rep_hard`) REFERENCES `reparacionhardware` (`Id_rep_hard`),
+  CONSTRAINT `reparacion_ibfk_2` FOREIGN KEY (`Id_rep_soft`) REFERENCES `reparacionsoftware` (`Id_rep_soft`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish_ci</sql_create_table>
+</table>
+<table name="reparados" view="standard">
+<left>253</left>
+<top>288</top>
+<width>174</width>
+<height>97</height>
+<sql_create_table>CREATE TABLE `reparados` (
+  `Id_reparado` int(11) NOT NULL,
+  `Id_RepUsados` int(11) NOT NULL,
+  `fecha_reparacion` datetime NOT NULL,
+  PRIMARY KEY (`Id_reparado`),
+  KEY `Id_RepUsados` (`Id_RepUsados`),
+  CONSTRAINT `reparados_ibfk_2` FOREIGN KEY (`Id_reparado`) REFERENCES `fotoreparacion` (`Id_rep_hard`),
+  CONSTRAINT `reparados_ibfk_3` FOREIGN KEY (`Id_RepUsados`) REFERENCES `repuestousados` (`Id_RepUsados`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish_ci</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>
