@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>551</width>
+    <height>542</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>551</width>
+    <height>542</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>EgresoEquios</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../img/pucusoft.png</normaloff>../img/pucusoft.png</iconset>
+  </property>
+  <widget class="QWidget" name="Fondo">
+   <property name="styleSheet">
+    <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 1,stop: 0 white, stop: 0.4 azure,stop: 1 green);</string>
+   </property>
+   <widget class="QLabel" name="Logo">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>10</y>
+      <width>91</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../img/Logo_HelpDesk.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Marquesina">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>20</y>
+      <width>301</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: none;
+
+</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt; font-weight:700;&quot;&gt; Equipo Reparado&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="Etiqueta_Frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>231</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: none;
+border-color: black;
+border-style: dashed;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>211</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius:10px; 
+font: 18pt;
+color: black;
+border: 1px solid #1890ff;
+
+
+</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>211</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius:10px; 
+font: 18pt;
+color: black;
+border: 1px solid #1890ff;
+
+
+</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>211</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius:10px; 
+font: 18pt;
+color: black;
+border: 1px solid #1890ff;
+
+
+</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>211</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius:10px; 
+font: 18pt;
+color: black;
+border: 1px solid #1890ff;
+
+
+</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="Editor_Frame">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>110</y>
+      <width>311</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: none;
+border-color: black;
+border-style: dashed;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>291</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">  background-color: rgba(0, 0, 0,0);
+  border-radius:10px; 
+   color: rgb(255, 255, 254);
+  border: 2px solid  rgb(255, 255, 255);
+  font: 14pt ;
+hover{
+background-color: rgba(0, 0, 0,0);
+border-radius:10px; 
+font: 14pt;;
+border: 2px solid  rgb(120, 0, 171);
+}
+  :focus{
+  background-color: rgb(0, 0, 0);
+  border-radius:10px; 
+   border: 2px solid rgb(120, 0, 171);
+  font: 14pt;
+  }
+        </string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>291</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">  background-color: rgba(0, 0, 0,0);
+  border-radius:10px; 
+   color: rgb(255, 255, 254);
+  border: 2px solid  rgb(255, 255, 255);
+  font: 14pt ;
+hover{
+background-color: rgba(0, 0, 0,0);
+border-radius:10px; 
+font: 14pt;;
+border: 2px solid  rgb(120, 0, 171);
+}
+  :focus{
+  background-color: rgb(0, 0, 0);
+  border-radius:10px; 
+   border: 2px solid rgb(120, 0, 171);
+  font: 14pt;
+  }
+        </string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>291</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">  background-color: rgba(0, 0, 0,0);
+  border-radius:10px; 
+   color: rgb(255, 255, 254);
+  border: 2px solid  rgb(255, 255, 255);
+  font: 14pt ;
+hover{
+background-color: rgba(0, 0, 0,0);
+border-radius:10px; 
+font: 14pt;;
+border: 2px solid  rgb(120, 0, 171);
+}
+  :focus{
+  background-color: rgb(0, 0, 0);
+  border-radius:10px; 
+   border: 2px solid rgb(120, 0, 171);
+  font: 14pt;
+  }
+        </string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>291</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">  background-color: rgba(0, 0, 0,0);
+  border-radius:10px; 
+   color: rgb(255, 255, 254);
+  border: 2px solid  rgb(255, 255, 255);
+  font: 14pt ;
+hover{
+background-color: rgba(0, 0, 0,0);
+border-radius:10px; 
+font: 14pt;;
+border: 2px solid  rgb(120, 0, 171);
+}
+  :focus{
+  background-color: rgb(0, 0, 0);
+  border-radius:10px; 
+   border: 2px solid rgb(120, 0, 171);
+  font: 14pt;
+  }
+        </string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="Clear_Button">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>310</y>
+      <width>141</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> width: 6px;
+ height: 6px;
+ border: 2px solid #1890ff;
+ border-radius: 8px;
+ background: none;
+font-size: 15px;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Limpiar:</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../img/limpiezar-datos.png</normaloff>../img/limpiezar-datos.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>35</width>
+      <height>35</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Record_Button">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>310</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">width: 6px;
+ height: 6px;
+ border: 2px solid #1890ff;
+ border-radius: 8px;
+ background: none;
+font-size: 15px;</string>
+    </property>
+    <property name="text">
+     <string>Registro:</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../img/registro-usuario.png</normaloff>../img/registro-usuario.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>40</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Exit_Button">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>310</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">width: 6px;
+ height: 6px;
+ border: 2px solid #1890ff;
+ border-radius: 8px;
+ background: none;
+font-size: 15px;</string>
+    </property>
+    <property name="text">
+     <string>Salir:</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../img/salida.png</normaloff>../img/salida.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>40</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
